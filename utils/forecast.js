@@ -19,13 +19,10 @@ const forecast = (latitude, longitude, callback) => {
 
             callback(undefined, "It is currently " + response.body.currently.temperature + " Degree C. There is a " + response.body.currently.precipProbability + "% chance of rain.")
     
-  }
+       } 
+ 
+    }) 
 
-
-                         
-                 
-
-      }) 
 }
 
 

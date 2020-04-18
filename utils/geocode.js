@@ -21,12 +21,13 @@ const geocode = (address, callback) => {
   
   
             callback(undefined, {
-  
-            latitute: response.body.features[0].center[1],
-    
-            longitude: response.body.features[0].center[0],
-    
-            location: response.body.features[0].place_name
+            
+               
+               latitude: response.body.features[0].center[1],
+
+               longitude: response.body.features[0].center[0],
+            
+               location: response.body.features[0].place_name
   
            })
        }

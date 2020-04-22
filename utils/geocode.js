@@ -5,8 +5,6 @@ const dotenv = require('dotenv').config()
 const geocode = (address, callback) => {
 
 
-    //const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + encodeURIComponent(address) + ".json?access_token=pk.eyJ1IjoiYWVnb250YXIiLCJhIjoiY2s4YnpzMW4xMDB4dTNmbHNua2NoZGhqbCJ9.PzFwRuPV1tb6-044P1d9fg"
-    
     const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + encodeURIComponent(address) + ".json?access_token=" + process.env.CORD_API
     
     request ({url, json:true}, (error, {body}) => {

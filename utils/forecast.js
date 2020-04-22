@@ -6,9 +6,6 @@
 
 const forecast = (latitude, longitude, callback) => {
 
-//const url = 'https://api.darksky.net/forecast/d18543d5b61ebcb32ebac9612bafb89d/'  + latitude + ',' + longitude
-
-
 
 const url = 'https://api.darksky.net/forecast/' + process.env.WEATHER_API + '/' + latitude + ','  + longitude + '/'
 

@@ -1,5 +1,5 @@
  const request = require('request')
-
+ const dotenv = require('dotenv').config()
 
 
 
@@ -10,22 +10,22 @@ const forecast = (latitude, longitude, callback) => {
 
 
 
-const url = 'https://api.darksky.net/forecast/d18543d5b61ebcb32ebac9612bafb89d/' + latitude + ','  + longitude + '/'
+const url = 'https://api.darksky.net/forecast/' + process.env.WEATHER_API + '/' + latitude + ','  + longitude + '/'
 
-     request({ url:url, json:true}, (error, response) => {
+     request({ url, json:true}, (error, {body}) => {
 
         if (error) {
                  
                 callback('unable to connect to weather service!', undefined)
 
-        } else if(response.body.error) {
+        } else if(body.error) {
                 
                 callback('unable to connect to weather servicex2!', undefined)
 
 
         } else {
 
-                callback(undefined,  response.body.daily.data[0].summary )
+                callback(undefined,  body.daily.data[0].summary )
     
        } 
  
